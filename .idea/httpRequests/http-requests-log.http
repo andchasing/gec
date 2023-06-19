@@ -1,0 +1,14 @@
+GET http://localhost:8085/admin/system/sysRole/findAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2023-06-16T084441.200.json
+
+###
+
+GET http://localhost:8085/admin/system/sysRole/findAll
+Accept: */*
+Cache-Control: no-cache
+
+###
+

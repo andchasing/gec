@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    username: root
+    password: 1087
+    url: jdbc:mysql://172.25.250.111:3306/salary?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    enabled: true
+    servlet:
+      content-type: text/html
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+#    content-type: text/html
+#    encoding: UTF-8
+#    mode: HTML5
+#    prefix: classpath:/templates
+#    suffix: .html
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.boo.pojo
+logging:
+  level:
+    root: info
+    boot: debug

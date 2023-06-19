@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<table border="1" align="center" width="60%">
+    <tr>
+        <th>姓名</th>
+        <th>基本工资</th>
+        <th>职务工资</th>
+        <th>津贴</th>
+        <th>医疗保险</th>
+        <th>住房公积金</th>
+        <th>总工资</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="staff:${stafflist}">
+        <td th:text="${staff.name}"></td>
+        <td th:text="${staff.basic_salary}"></td>
+        <td th:text="${staff.position_salary}"></td>
+        <td th:text="${staff.allowance}"></td>
+        <td th:text="${staff.medical_insurance}"></td>
+        <td th:text="${staff.housing_fund}"></td>
+        <td th:text="${staff.total_salary}"></td>
+        <td>
+            <a th:href="@{/toUpdate(id=${staff.id})}" >修改</a>
+            <a th:href="@{/deleteStaff(id=${staff.id})}" >删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户</title>
+</head>
+<body>
+<form th:action="@{/updateStaff}" method="post" name="staff">
+    <input type="hidden" name="id" th:field="${staff.id}"/><br><br><br>
+    <p>姓名：<input type="text" name="name" th:field="${staff.name}"></p>
+    <p>基本工资：<input type="text" name="basic_salary" th:field="${staff.basic_salary}"></p>
+    <p>职务工资：<input type="text" name="position_salary" th:field="${staff.position_salary}"></p>
+    <p>津贴：<input type="text" name="allowance" th:field="${staff.allowance}"></p>
+    <p>医疗保险：<input type="text" name="medical_insurance" th:field="${staff.medical_insurance}"></p>
+    <p>住房公积金：<input type="text" name="housing_fund" th:field="${staff.housing_fund}"></p>
+    <input type="submit" value="修改">
+</form>
+</body>
+</html>
