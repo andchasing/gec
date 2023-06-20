@@ -2,8 +2,9 @@ package com.gec.system.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.gec.model.system.SysUser;
 import com.gec.model.vo.SysUserQueryVo;
-import com.gec.system.entity.SysUser;
+
 
 /**
  * <p>

@@ -3,8 +3,8 @@ package com.gec.system.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.gec.model.system.SysUser;
 import com.gec.model.vo.SysUserQueryVo;
-import com.gec.system.entity.SysUser;
 import com.gec.system.service.SysUserService;
 import com.gec.system.util.Result;
 import io.swagger.annotations.Api;

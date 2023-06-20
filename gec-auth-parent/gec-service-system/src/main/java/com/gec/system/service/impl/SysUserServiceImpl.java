@@ -1,11 +1,11 @@
 package com.gec.system.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.gec.model.system.SysUser;
 import com.gec.model.vo.SysUserQueryVo;
-import com.gec.system.entity.SysUser;
 import com.gec.system.mapper.SysUserMapper;
 import com.gec.system.service.SysUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
