@@ -19,7 +19,7 @@ public class CodeGet {
         // 2、全局配置
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("J:\\mpout\\gecOut");
+        gc.setOutputDir("J:\\mpout\\gecOut"); // 到处路径
 
         // 如果不加 就是 IUserService
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
@@ -48,7 +48,7 @@ public class CodeGet {
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
 
-        strategy.setInclude("sys_user");
+        strategy.setInclude("sys_user"); // 目标表名
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
 
