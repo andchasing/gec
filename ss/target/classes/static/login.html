@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>--- 自定义登录页面--</title>
+</head>
+<body>
+<!--
+注意：
+    登录的认证，这里只需要提供地址，不需要提供具体的实现 和  shiro 一样
+    表单中 name 必须是 username 和 password 不能是别的
+    -->
+<form action="/test/login" method="post">
+    username:<input type="text" name="loginusername"> <br>
+    password:<input type="text" name="loginpassword"> <br>
+
+    <input type="submit" value="登录">
+</form>
+</body>
+</html>
