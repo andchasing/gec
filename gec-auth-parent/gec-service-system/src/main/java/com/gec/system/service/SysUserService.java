@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.gec.model.system.SysUser;
 import com.gec.model.vo.SysUserQueryVo;
 
+import java.util.Map;
+
 
 /**
  * <p>
@@ -16,5 +18,10 @@ import com.gec.model.vo.SysUserQueryVo;
  */
 public interface SysUserService extends IService<SysUser> {
     IPage<SysUser> selectPage(IPage<SysUser> iPage, SysUserQueryVo sysUserQueryVo);
+
     void updateStatus(Long id, Integer status);
+
+    SysUser getUserInfoUserName(String username);
+
+    Map<String, Object> getUserInfo(String username);
 }
