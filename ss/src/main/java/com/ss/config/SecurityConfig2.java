@@ -52,8 +52,8 @@ public class SecurityConfig2  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/","/test/hello","/test/login").permitAll()
 
                 // 当前认证通过后的用户，只有具备某个权限，才能访问
-                .antMatchers("/test/index").hasAuthority("superadmin")
-                // .antMatchers("/test/index").hasAnyAuthority("superadmin,admins")
+                // .antMatchers("/test/index").hasAuthority("superadmin")
+                .antMatchers("/test/index").hasAnyAuthority("superadmin","admins")
 
                 // 角色授权
                 // .antMatchers("/test/index").hasRole("boss")
