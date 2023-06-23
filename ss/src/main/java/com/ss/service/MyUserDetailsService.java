@@ -41,20 +41,30 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new RuntimeException("用户不存在异常..");
         }
 
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        // 用户授权
+        // 注意这里必须要和  hasAuthority 方法中配置的保持一致,superadmin与下面superadmin1不一致是，即使登录成功也无权访问
+        List<GrantedAuthority> roles =
+                 // AuthorityUtils.commaSeparatedStringToAuthorityList("superadmin1");
+                AuthorityUtils.commaSeparatedStringToAuthorityList("superadmin");
+                // AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_boss");
+          // single
+        return new User(employee.getUsername(),
+                new BCryptPasswordEncoder().encode(employee.getPassword()),roles);
 
-
-        // 将数据库的明文密码进行加密
-        String passwordWithbCry = bCryptPasswordEncoder.encode(employee.getPassword());
-
-        //  User(String username, String password, Collection<? extends GrantedAuthority> authorities)
-
-        List<GrantedAuthority> roles = AuthorityUtils.commaSeparatedStringToAuthorityList("roles");
-
-        // 注意这里的User是security.core.userdetails.User包下的User
-        User user = new User(employee.getUsername(), passwordWithbCry, roles);
-
-        return user;
+//        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+//
+//
+//        // 将数据库的明文密码进行加密
+//        String passwordWithbCry = bCryptPasswordEncoder.encode(employee.getPassword());
+//
+//        //  User(String username, String password, Collection<? extends GrantedAuthority> authorities)
+//
+//        List<GrantedAuthority> roles = AuthorityUtils.commaSeparatedStringToAuthorityList("roles");
+//
+//        // 注意这里的User是security.core.userdetails.User包下的User
+//        User user = new User(employee.getUsername(), passwordWithbCry, roles);
+//
+//        return user;
 
 
     }

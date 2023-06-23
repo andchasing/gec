@@ -29,6 +29,9 @@ public class SecurityConfig2  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        // 配置无权访问的 403 页面
+        http.exceptionHandling().accessDeniedPage("/unauth.html");
+
         http.formLogin()   // 设置登录页面
                 .loginPage("/login.html")
                 // 设置提交处理的路径
@@ -36,7 +39,7 @@ public class SecurityConfig2  extends WebSecurityConfigurerAdapter {
                 // 设置登录成功后跳转路径
                 .defaultSuccessUrl("/test/index")
                 // 登录失败路径
-                .failureForwardUrl("/fail")
+                // .failureForwardUrl("/fail")
                 //  获取登录用户名
                 .usernameParameter("loginusername")
                 // 获取登录密码
@@ -49,7 +52,12 @@ public class SecurityConfig2  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/","/test/hello","/test/login").permitAll()
 
                 // 当前认证通过后的用户，只有具备某个权限，才能访问
-                // .antMatchers("/test/index").hasAuthority("superadmin")
+                .antMatchers("/test/index").hasAuthority("superadmin")
+                // .antMatchers("/test/index").hasAnyAuthority("superadmin,admins")
+
+                // 角色授权
+                // .antMatchers("/test/index").hasRole("boss")
+                // .antMatchers("/test/index").hasAnyRole("boss,doctor")
 
                 // 其他路径都需要认证
                 .anyRequest().authenticated()
@@ -57,5 +65,10 @@ public class SecurityConfig2  extends WebSecurityConfigurerAdapter {
                 // 禁止CRF 防护  （注意此代码如果不加，会登录不了）
                 .and().csrf().disable();
 
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 }
