@@ -1,6 +1,8 @@
 package com.gec.system.exception;
 
 import com.gec.system.util.Result;
+import com.gec.system.util.ResultCodeEnum;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,6 +37,17 @@ public class GlobalException {
     {
         e.printStackTrace();
         return Result.fail().code(e.getCode()).message(e.getMsg());
+    }
+
+    /**
+     * spring security异常
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(AccessDeniedException.class)
+    @ResponseBody
+    public Result error(AccessDeniedException e) throws AccessDeniedException {
+        return Result.fail().code(ResultCodeEnum.PERMISSION.getCode()).message("没有当前操作权限");
     }
 
 }

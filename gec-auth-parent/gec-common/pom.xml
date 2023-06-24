@@ -15,7 +15,15 @@
     <modules>
         <module>common-util</module>
         <module>service-util</module>
+        <module>auth-security</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
