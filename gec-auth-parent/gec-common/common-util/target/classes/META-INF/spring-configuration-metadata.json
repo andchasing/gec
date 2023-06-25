@@ -1,0 +1,57 @@
+{
+  "groups": [
+    {
+      "name": "al.oss",
+      "type": "com.gec.system.util.OssConfig",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.vod",
+      "type": "com.gec.system.config.VodConfig",
+      "sourceType": "com.gec.system.config.VodConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "al.oss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.oss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.oss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.oss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.oss.url",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.util.OssConfig"
+    },
+    {
+      "name": "al.vod.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.config.VodConfig"
+    },
+    {
+      "name": "al.vod.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.config.VodConfig"
+    },
+    {
+      "name": "al.vod.region-id",
+      "type": "java.lang.String",
+      "sourceType": "com.gec.system.config.VodConfig"
+    }
+  ],
+  "hints": []
+}
