@@ -32,13 +32,11 @@ spring:
 al:
   oss: #存储
     endpoint: oss-cn-guangzhou.aliyuncs.com   # 域
-    accessKeyId: LTAI5tJaiXBZZ6UU5w7JDkmf  # 秘钥
-    accessKeySecret: DPItG7t3MNvBEysb00368IRrBn61aH # 秘钥
+    accessKeyId:   # 秘钥
+    accessKeySecret:  # 秘钥
     bucketName: move-ch  # 桶名
     url: https://move-ch.oss-cn-guangzhou.aliyuncs.com  # 访问地址
-#    vod: # 视频
-#      regionId: cn-shanghai
-#      accessKeyId: LTAI5tHZUHn9mZESEHZze9Q1
-#      accessKeySecret: Mm5IuCrLLYuit9iBvteOIjgSKLmnQW
-Del:
-  name: 1
+vod: # 视频
+  regionId: cn-shanghai
+  accessKeyId: LTAI5tHZUHn9mZESEHZze9Q1
+  accessKeySecret: Mm5IuCrLLYuit9iBvteOIjgSKLmnQW
