@@ -36,7 +36,7 @@ al:
     accessKeySecret:  # 秘钥
     bucketName: move-ch  # 桶名
     url: https://move-ch.oss-cn-guangzhou.aliyuncs.com  # 访问地址
-vod: # 视频
-  regionId: cn-shanghai
-  accessKeyId: LTAI5tHZUHn9mZESEHZze9Q1
-  accessKeySecret: Mm5IuCrLLYuit9iBvteOIjgSKLmnQW
+  vod: # 视频
+    regionId: cn-shanghai
+    accessKeyId:
+    accessKeySecret: 

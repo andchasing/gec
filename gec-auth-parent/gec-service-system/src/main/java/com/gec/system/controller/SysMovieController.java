@@ -6,11 +6,13 @@ import com.gec.model.system.SysMovie;
 import com.gec.model.vo.SysMovieQueryVo;
 import com.gec.system.common.Result;
 import com.gec.system.service.SysMovieService;
+import com.gec.system.util.VodTemplate;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -22,8 +24,8 @@ public class SysMovieController {
     @Autowired
     private SysMovieService sysMovieService;
 
-//    @Autowired
-//    private VodTemplate vodTemplate;
+    @Autowired
+    private VodTemplate vodTemplate;
 
     @ApiOperation("获取全部影视列表")
     // http://localhost:8085/admin/system/sysRole/findAll
@@ -114,6 +116,36 @@ public class SysMovieController {
         {
             return Result.fail();
         }
+    }
+
+    // 播放视频   根据id 和 播放秘钥
+    @ApiOperation("根据id获取播放凭证")
+    @RequestMapping(value = "/getPlayAuth/{id}")
+    public Result playVideoByAuth(@PathVariable Long id) throws Exception {
+
+        //1.根据id 获取 到 SysMovie
+        SysMovie sysMovie = this.sysMovieService.getById(id);
+        //2. 从  SysMovie 中获取到 image  playId  Auth
+        String image = sysMovie.getImage();
+
+        String playId = sysMovie.getPlayId();
+        System.out.println("playId = " + playId);
+
+        //  获取 播放秘钥
+
+        // 根据playId 去阿里云服务器获取播放秘钥
+
+        String playAuth = this.vodTemplate.getVideoPlayAuth(playId).getPlayAuth();
+
+
+        // 封装map 集合
+        HashMap<String, Object> map = new HashMap<>();
+        // 分别封装三个参数  参数的key 要和前端对应
+        map.put("image", image);
+        map.put("playId",playId);
+        map.put("playAuth",playAuth);
+        return Result.ok(map);
+
     }
 
 }

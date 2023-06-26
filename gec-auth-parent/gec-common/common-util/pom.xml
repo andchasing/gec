@@ -78,11 +78,11 @@
             <artifactId>aliyun-sdk-oss</artifactId>
         </dependency>
 
-<!--        &lt;!&ndash;视频vod上传 依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.aliyun</groupId>-->
-<!--            <artifactId>aliyun-sdk-vod-upload</artifactId>-->
-<!--        </dependency>-->
+        <!--视频vod上传 依赖-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-sdk-vod-upload</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
